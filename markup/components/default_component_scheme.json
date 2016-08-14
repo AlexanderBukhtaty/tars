@@ -14,13 +14,13 @@
     "files": [
         {
             "name": "__componentName__.__templateExtension__",
-            "content": "<div class=\"__componentName__\"></div>"
+            "content": "<!--START __componentName__-->\n<div class=\"__componentName__\">\n</div>\n<!--END __componentName__-->"
         }, {
             "name": "__componentName__.__cssExtension__",
-            "content": ".__componentName__ {}"
+            "content": "\/*__componentName__*\/\n.__componentName__ {\n\/\/large desktop 1200\n@media (max-width: $screen-lg) {\n}\n\/\/desktop 992\n@media (max-width: $screen-md) {\n}\n\/\/tablet 768\n@media (max-width: $screen-sm) {\n}\n\/\/mobile 480\n@media (max-width: $screen-xs) {\n}\n}"
         }, {
             "name": "__componentName__.js",
-            "content": ""
+            "content": "\/*__componentName__*\/"
         }
     ]
 }

@@ -1,18 +1,17 @@
-/* Your custom fonts here */
+$fonts-list: "DINPro-Regular" "DINPro-Bold" "DINPro-Medium";
 
-/* Example
-
-@font-face {
-    font-family: 'CustomFont';
-    src: url('../fonts/Custom-Font.eot');
-    src: url('../fonts/Custom-Font.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/Custom-Font.woff') format('woff'),
-         url('../fonts/Custom-Font.svg#custom_font') format('svg');
-    font-weight: 400;       // For normal width. It could has another value   
-    font-style: normal;     // Also could has another value
+@mixin gen-fonts {
+  @each $font in $fonts-list{
+    @font-face {
+      font-family: '#{$font}';
+      src: url('../fonts/#{$font}.eot'); /* IE9 Compat Modes */
+      src: url('../fonts/#{$font}.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+      url('../fonts/#{$font}.woff2') format('woff2'), /* Super Modern Browsers */
+      url('../fonts/#{$font}.woff') format('woff'), /* Pretty Modern Browsers */
+      url('../fonts/#{$font}.ttf')  format('truetype'), /* Safari, Android, iOS */
+      url('../fonts/#{$font}.svg#svgFontName') format('svg'); /* Legacy iOS */
+      font-style: normal;
     }
-
-
-// Var for using custom font
-$CustomFont: 'CustomFont', Helvetica, Arial, sans-serif;
-*/
+  }
+}
+@include gen-fonts();
